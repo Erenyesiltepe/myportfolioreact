@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useState } from 'react';
-import logo from "@/assets/logo.png"
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
@@ -8,7 +7,7 @@ interface LoadingPageProps {
   loaded?: boolean;
 }
 
-const LoadingPage = ({ loaded = false }: LoadingPageProps) => {
+const LoadingPage = ({ loaded = true }: LoadingPageProps) => {
   const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
@@ -20,13 +19,13 @@ const LoadingPage = ({ loaded = false }: LoadingPageProps) => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-gray-900 flex items-center justify-center p-8">
+    <div className="fixed inset-0 flex items-center justify-center p-8">
       {/* Container for the entire loading design */}
-      <div className="relative w-full h-full bg-gray-800 overflow-hidden">
-        <div className="w-full h-full flex">
+      <div className="relative w-full h-full overflow-hidden">
+        <div className="w-full h-full flex bg-transparent">
           {/* Left half */}
           <div className={cn(
-            "w-1/2 relative transition-transform duration-1000",
+            "w-1/2 relative transition-transform duration-1000 bg-gray-800",
             loaded && "-translate-x-[120%]"
           )}>
             {/* Left horizontal line */}
@@ -80,8 +79,10 @@ const LoadingPage = ({ loaded = false }: LoadingPageProps) => {
                 >
                   <Image 
                     priority 
-                    src={logo} 
+                    src="/logo.png" 
                     alt=""
+                    width={112}
+                    height={112}
                     className="rounded-full"
                   />
                 </div>
@@ -91,7 +92,7 @@ const LoadingPage = ({ loaded = false }: LoadingPageProps) => {
 
           {/* Right half */}
           <div className={cn(
-            "w-1/2 relative transition-transform duration-1000",
+            "w-1/2 relative transition-transform duration-1000 bg-gray-800",
             loaded && "translate-x-[120%]"
           )}>
             {/* Right horizontal line */}

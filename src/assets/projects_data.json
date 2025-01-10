@@ -1,0 +1,38 @@
+{
+  "coding": [
+    {
+      "id": "coding1",
+      "title": "Coding Project 1",
+      "about": "Detailed description of the coding project...",
+      "link": "https://project-link.com",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/blender/1.jpg"
+        },
+        {
+          "type": "3d",
+          "url": "/blender/untitled.glb"
+        }
+      ]
+    }
+  ],
+  "hobby": [
+    {
+      "id": "hobby1",
+      "title": "Hobby Project 1",
+      "about": "Detailed description of the hobby project...",
+      "link": "https://project-link.com",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/blender/1.jpg"
+        },
+        {
+          "type": "3d",
+          "url": "/blender/untitled.glb"
+        }
+      ]
+    }
+  ]
+} 

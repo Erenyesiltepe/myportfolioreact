@@ -1,0 +1,38 @@
+{
+  "experience": [
+    {
+      "role": "Senior Developer",
+      "companyName": "Company Name",
+      "dateRange": "2020 - Present",
+      "description": "Description of your role and responsibilities..."
+    },
+    {
+        "role": "Senior Developer",
+        "companyName": "Company Name",
+        "dateRange": "2020 - Present",
+        "description": "Description of your role and responsibilities..."
+      },
+      {
+        "role": "Senior Developer",
+        "companyName": "Company Name",
+        "dateRange": "2020 - Present",
+        "description": "Description of your role and responsibilities..."
+      }
+  ],
+  "education": [
+    {
+      "school": "University Name",
+      "degree": "Bachelor's Degree",
+      "dateRange": "2016 - 2020",
+      "description": "Additional details about your education..."
+    }
+  ],
+  "social": [
+    {
+      "activity": "Activity Name",
+      "organization": "Organization",
+      "date": "Date",
+      "description": "Description of your involvement..."
+    }
+  ]
+} 
