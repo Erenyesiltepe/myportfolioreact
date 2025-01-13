@@ -1,38 +1,56 @@
 {
   "experience": [
     {
-      "role": "Senior Developer",
-      "companyName": "Company Name",
-      "dateRange": "2020 - Present",
-      "description": "Description of your role and responsibilities..."
+      "role": "Software Development Intern",
+      "companyName": "Silver Brain AI AG",
+      "dateRange": "2/2024-5/2024",
+      "description": "Backend development: Integrated RAG for improved AI results in IuclidAssist, public/private beta system\nimplemented with user validation and manual admin approval, fixed GitHub login, added cost estimation\nand updated APIs/models, tested and implemented changes based on requirements.\n• Frontend and Documentation: Implemented Firebase login and a custom tag in Docusaurus (visible only\nto SilverBrain users). Contributed to the project’s documentation.\n• Deployment: Maintained projects on AWS EC2 using Portainer, updated credentials, and ensured\ncontainer stability."
     },
     {
-        "role": "Senior Developer",
-        "companyName": "Company Name",
-        "dateRange": "2020 - Present",
-        "description": "Description of your role and responsibilities..."
-      },
-      {
-        "role": "Senior Developer",
-        "companyName": "Company Name",
-        "dateRange": "2020 - Present",
-        "description": "Description of your role and responsibilities..."
-      }
+      "role": "Software Development/System Engineering Intern",
+      "companyName": "Havelsan",
+      "dateRange": "9/2023-12/2023",
+      "description": "Frontend development using Vue.js and Naive-UI, backend development with PHP and Laravel, Linux\nserver management and maintenance, Nexus configuration for repository management, Nginx setup and\nconfiguration for web serving, replicated HP IMC 7’s basic features using Three.js."
+    },
+    {
+      "role": "Software Developer",
+      "companyName": "Sylvest/ToGather",
+      "dateRange": "7/2023-9/2023",
+      "description": "Mobile app UI development with Flutter, web scraping (Beautiful Soup 4, requests, Playwright), and data\nintegration with OpenAI and Google Vision APIs."
+    },
+    {
+      "role": "Software Development Intern",
+      "companyName": "Dakik Yazılım",
+      "dateRange": "6/2023-8/2023",
+      "description": "NLP tasks using Python (Transformers, PyTorch), data acquisition and vectorization, and UI development with Gradio."
+    },
+    {
+      "role": "Part Time Lab Assistant",
+      "companyName": "Bilkent University CTIS Department",
+      "dateRange": "10/2022-5/2023",
+      "description": "Assisted students with C programming in CTIS151 and CTIS152 labs, providing guidance and solutions."
+    }
   ],
   "education": [
     {
-      "school": "University Name",
+      "school": "Bilkent University, Information Systems and Technologies",
       "degree": "Bachelor's Degree",
-      "dateRange": "2016 - 2020",
-      "description": "Additional details about your education..."
+      "dateRange": "9/2020-6/2025",
+      "description": "Projects: Petiary: Pet tracking app written with java and swing GUI; Portfolio Website: Personal portfolio:\nHTML, CSS, JavaScript used;Words ofWonders Game: HTML, CSS, and JavaScript game replica ;\nAhbapol: Basic social media site with HTML, CSS, JavaScript, and PHP ; Small Games: Developed games\nusing C, OpenGL, GLUT, and Java."
+    },
+    {
+      "school": "University Of Applied Sciences Upper Austria, Media Communication and Design",
+      "degree": "Exchange",
+      "dateRange": "2/2024-7/2025",
+      "description": "Projects: OpenConferenceDesk: Online meeting system written with React.js, Image processing and classification using OpenCv and scikit-learn."
     }
   ],
   "social": [
     {
-      "activity": "Activity Name",
-      "organization": "Organization",
-      "date": "Date",
-      "description": "Description of your involvement..."
+      "activity": "General Secretary & Co-founder",
+      "organization": "Bilkent Childhood Games Club",
+      "date": "7/2024-Present",
+      "description": "Co-founded a university club aimed at\norganizing and reviving traditional games like hide and seek and dodgeball. My responsibilities include\nmanaging club operations, liaising with university administration, and ensuring that all necessary\ndocumentation is accurately submitted."
     }
   ]
 } 

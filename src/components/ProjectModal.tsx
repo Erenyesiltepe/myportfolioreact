@@ -11,7 +11,7 @@ interface ProjectData {
   category: "coding" | "hobby";
   link: string;
   assets: {
-    type: "image" | "gltf";
+    type: "image" | "gltf" | "video";
     url: string;
   }[];
 }
@@ -80,7 +80,18 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                   fill
                   className="object-contain"
                 />
-               ) : (
+               ) : currentAsset.type === "video" ? (
+                <video 
+                  className="w-full h-full object-contain"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                >
+                  <source src={currentAsset.url} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
                 <div className="w-full h-full">
                   <GltfLoader url={currentAsset.url} />
                 </div>
@@ -120,6 +131,18 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
               Go to details
             </a>
           </div>
+
+          {/* Link button - only show if link exists */}
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              Visit Project
+            </a>
+          )}
         </div>
       </div>
     </div>

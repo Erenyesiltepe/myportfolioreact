@@ -1,7 +1,7 @@
 {
   "coding": [
     {
-      "id": "coding1",
+      "id": "Mahmut test",
       "title": "Coding Project 1",
       "about": "Detailed description of the coding project...",
       "link": "https://project-link.com",
@@ -19,18 +19,82 @@
   ],
   "hobby": [
     {
-      "id": "hobby1",
-      "title": "Hobby Project 1",
-      "about": "Detailed description of the hobby project...",
-      "link": "https://project-link.com",
+      "id": "abstractanim",
+      "title": "Abstract Animation",
+      "about": "A tutorial video for me to practice blender materials",
+      "link": "",
       "assets": [
         {
           "type": "image",
-          "url": "/blender/1.jpg"
+          "url": "/blender/abstactanimation/abstractv2.png"
         },
         {
           "type": "3d",
-          "url": "/blender/untitled.glb"
+          "url": "/blender/abstactanimation/abstractenv.glb"
+        },
+        {
+          "type": "video",
+          "url": "/blender/abstactanimation/abstractenv.m4v"
+        }
+      ]
+    },
+    {
+      "id": "bulletanim",
+      "title": "Bullet Animation",
+      "about": "A simple bullet animation I made for fun in my spare time",
+      "link": "",
+      "assets": [
+        {
+          "type": "3d",
+          "url": "/blender/bulletanim/bulani.glb"
+        }
+      ]
+    },
+    {
+      "id": "chair",
+      "title": "3D Chair",
+      "about": "A chair I created following a tutorial on youtube.",
+      "link": "",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/blender/chair/chair.png"
+        },
+        {
+          "type": "3d",
+          "url": "/blender/chair/Chair.glb"
+        }
+      ]
+    },
+    {
+      "id": "farm",
+      "title": "3D Farm",
+      "about": "A simple 3D farm I created in my spare time.",
+      "link": "https://www.instagram.com/p/CoSKszhIxvQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/blender/farm/finalrender.png"
+        },
+        {
+          "type": "3d",
+          "url": "/blender/farm/firsttry.glb"
+        }
+      ]
+    },
+    {
+      "id": "weirdcharacter",
+      "title": "Weird Character 3D",
+      "about": "A recreation of an NFT project I found on internet.",
+      "link": "https://www.instagram.com/p/Cnr0TBdolVO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/blender/weirdcharacter/untitled.jpg"
+        },
+        {
+          "type": "3d",
+          "url": "/blender/weirdcharacter/weirdcharacter.glb"
         }
       ]
     }
