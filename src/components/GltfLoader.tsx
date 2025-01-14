@@ -1,7 +1,6 @@
 "use client";
-import { Canvas, useLoader } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { OrbitControls, PerspectiveCamera, Environment } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { useGLTF, OrbitControls, PerspectiveCamera, Environment } from '@react-three/drei';
 import { Suspense } from 'react';
 
 interface ModelProps {
@@ -9,8 +8,8 @@ interface ModelProps {
 }
 
 const Model = ({ url }: ModelProps) => {
-  const gltf = useLoader(GLTFLoader, url);
-  return <primitive object={gltf.scene} />;
+  const { scene } = useGLTF(url); // useGLTF returns an object with the scene property
+  return <primitive object={scene} />;
 };
 
 export default function GltfLoader({ url }: ModelProps) {

@@ -1,23 +1,52 @@
-"use client"
-import { useState } from 'react';
-import Image from 'next/image';
-import { cn } from '@/lib/utils';
-import ProjectModal from '@/components/ProjectModal';
-import PageLayout from '@/components/PageLayout';
-import projectsData from '@/assets/projects_data.json';
+"use client";
 
-type Category = 'coding' | 'hobby' | null;
+import { useState } from "react";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import ProjectModal from "@/components/ProjectModal";
+import PageLayout from "@/components/PageLayout";
+import projectsData from "@/assets/projects_data.json";
+
+interface ProjectData {
+  id: string;
+  title: string;
+  about: string;
+  category: string;
+  link: string;
+  assets: {
+    type: string;
+    url: string;
+  }[];
+}
+
+interface ProjectRaw {
+  id: string;
+  title: string;
+  about: string;
+  link: string;
+  assets: {
+    type: string;
+    url: string;
+  }[];
+}
+
+type Category = "coding" | "hobby" | null;
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<Category>(null);
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
+  const allProjects: ProjectData[] = [
+    ...projectsData.coding.map((project: ProjectRaw) => ({ ...project, category: "coding" })),
+    ...projectsData.hobby.map((project: ProjectRaw) => ({ ...project, category: "hobby" })),
+  ];
+
   const filteredProjects = selectedCategory
-    ? projectsData[selectedCategory]
-    : [...projectsData.coding, ...projectsData.hobby];
+    ? allProjects.filter((project) => project.category === selectedCategory)
+    : allProjects;
 
   const currentProject = selectedProject
-    ? [...projectsData.coding, ...projectsData.hobby].find(p => p.id === selectedProject)
+    ? allProjects.find((project) => project.id === selectedProject)
     : null;
 
   return (
@@ -26,22 +55,22 @@ export default function ProjectsPage() {
         {/* Category Sidebar */}
         <div className="w-full md:w-16 md:border-r-2 border-b-2 md:border-b-0 border-gray-700 p-4 md:py-4 flex flex-row md:flex-col items-center justify-center gap-4 md:gap-8">
           <button
-            onClick={() => setSelectedCategory('coding')}
+            onClick={() => setSelectedCategory("coding")}
             className={cn(
               "p-2 rounded md:[writing-mode:vertical-lr] md:rotate-180 transition-colors",
-              selectedCategory === 'coding' 
-                ? "bg-cyan-500 text-white" 
+              selectedCategory === "coding"
+                ? "bg-cyan-500 text-white"
                 : "text-gray-300 hover:bg-gray-700"
             )}
           >
             Coding
           </button>
           <button
-            onClick={() => setSelectedCategory('hobby')}
+            onClick={() => setSelectedCategory("hobby")}
             className={cn(
               "p-2 rounded md:[writing-mode:vertical-lr] md:rotate-180 transition-colors",
-              selectedCategory === 'hobby' 
-                ? "bg-cyan-500 text-white" 
+              selectedCategory === "hobby"
+                ? "bg-cyan-500 text-white"
                 : "text-gray-300 hover:bg-gray-700"
             )}
           >
@@ -53,7 +82,10 @@ export default function ProjectsPage() {
         <div className="flex-1 p-6 overflow-y-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
-              <div key={project.id} className="relative bg-gray-700 rounded-lg overflow-hidden group">
+              <div
+                key={project.id}
+                className="relative bg-gray-700 rounded-lg overflow-hidden group"
+              >
                 {/* Project Image */}
                 <div className="aspect-video relative">
                   <Image
@@ -63,7 +95,7 @@ export default function ProjectsPage() {
                     className="object-cover"
                   />
                 </div>
-                
+
                 {/* Project Title */}
                 <div className="p-4">
                   <h3 className="text-white font-semibold">{project.title}</h3>
@@ -74,9 +106,24 @@ export default function ProjectsPage() {
                   onClick={() => setSelectedProject(project.id)}
                   className="absolute top-2 right-2 p-2 bg-gray-900/80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
                 >
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
                   </svg>
                 </button>
               </div>
@@ -95,4 +142,4 @@ export default function ProjectsPage() {
       )}
     </PageLayout>
   );
-} 
+}

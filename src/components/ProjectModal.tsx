@@ -8,10 +8,10 @@ interface ProjectData {
   id: string;
   title: string;
   about: string;
-  category: "coding" | "hobby";
+  category: string;
   link: string;
   assets: {
-    type: "image" | "gltf" | "video";
+    type: string;
     url: string;
   }[];
 }
