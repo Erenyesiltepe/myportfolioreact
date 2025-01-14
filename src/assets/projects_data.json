@@ -1,18 +1,110 @@
 {
   "coding": [
     {
-      "id": "Mahmut test",
-      "title": "Coding Project 1",
-      "about": "Detailed description of the coding project...",
-      "link": "https://project-link.com",
+      "id": "Petiary",
+      "title": "Petiary",
+      "about": "Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).",
+      "link": "https://github.com/Kitsune1890/221-Project.git",
       "assets": [
         {
           "type": "image",
-          "url": "/blender/1.jpg"
-        },
+          "url": "/coding/petiary.png"
+        }
+      ]
+    },
+    {
+      "id": "HW1",
+      "title": "CTIS 164 HW1",
+      "about": "It was my 1. CTIS164 homework. I simply made a game using C language and glut library.",
+      "link": "https://github.com/Erenyesiltepe/CTIS164-create-a-game-project.git",
+      "assets": [
         {
-          "type": "3d",
-          "url": "/blender/untitled.glb"
+          "type": "image",
+          "url": "/coding/hw1.png"
+        }
+      ]
+    },
+    {
+      "id": "HW2",
+      "title": "CTIS 164 HW2",
+      "about": "It was my 2. CTIS164 homework. I simply made a game using C language and glut library.",
+      "link": "https://github.com/Erenyesiltepe/164-homework2-hit-the-fish-challange.git",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/coding/hw2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "HW3",
+      "title": "CTIS 164 HW3",
+      "about": "It was my 3. CTIS164 homework. I simply made a game using C language and glut library. I also implmented linked list and recursion.",
+      "link": "https://github.com/Erenyesiltepe/164-homework-3-car-light-simulation.git",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/coding/hw3.png"
+        }
+      ]
+    },
+    {
+      "id": "ZPR",
+      "title": "Project Spearman",
+      "about": "It was actually my friend's CTIS164 homework. I just revised it. It was a great experience to alter code of someone else's.",
+      "link": "https://github.com/Erenyesiltepe/z-lal-second-project-revisited",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/coding/kara.png"
+        }
+      ]
+    },
+    {
+      "id": "WOW",
+      "title": "Words-Of-Wonders Clone",
+      "about": "It was my frontend development term project. It's a words-of-wonders clone.",
+      "link": "https://github.com/Erenyesiltepe/164-homework-3-car-light-simulation.git",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/coding/wow.png"
+        }
+      ]
+    },
+    {
+      "id": "manga",
+      "title": "Manga Project",
+      "about": "The project consists of a backend, frontend and a simple Android application written in Kotlin. The project is created on demand of a friend of mine. The website is using Python, Django and React. I tried different deployment options for backend and frontend parts but then I decided on Amazon S3 Bucket, Postgresql DB and Vercel for backend and frontend themselves.",
+      "link": "https://github.com/Erenyesiltepe/Manga-Project-Repos",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/coding/wow.png"
+        }
+      ]
+    },
+    {
+      "id": "BLC",
+      "title": "Binary Leaves Classification",
+      "about": "Developed a leaf classification system using binary image processing techniques, combining handcrafted features and machine learning for accurate multi-class recognition.",
+      "link": "https://github.com/Erenyesiltepe/Digital-Imaging-Visual-Computing",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/coding/Leafrecognition.jpg"
+        }
+      ]
+    },
+    {
+      "id": "firstportfolio",
+      "title": "My First Portfolio Website",
+      "about": "The first portfolio website I created using pure HTML, CSS, JavaScript and PHP. Deployed on Github Pages.",
+      "link": "https://github.com/Erenyesiltepe/erenyesiltepe.github.io",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/coding/firstportfolio.jpg"
         }
       ]
     }
@@ -35,18 +127,6 @@
         {
           "type": "video",
           "url": "/blender/abstactanimation/abstractenv.m4v"
-        }
-      ]
-    },
-    {
-      "id": "bulletanim",
-      "title": "Bullet Animation",
-      "about": "A simple bullet animation I made for fun in my spare time",
-      "link": "",
-      "assets": [
-        {
-          "type": "3d",
-          "url": "/blender/bulletanim/bulani.glb"
         }
       ]
     },
