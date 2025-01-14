@@ -22,13 +22,13 @@ export default function ProjectsPage() {
 
   return (
     <PageLayout>
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
         {/* Category Sidebar */}
-        <div className="w-16 border-r-2 border-gray-700 py-4 flex flex-col items-center gap-8">
+        <div className="w-full md:w-16 md:border-r-2 border-b-2 md:border-b-0 border-gray-700 p-4 md:py-4 flex flex-row md:flex-col items-center justify-center gap-4 md:gap-8">
           <button
             onClick={() => setSelectedCategory('coding')}
             className={cn(
-              "p-2 rounded [writing-mode:vertical-lr] rotate-180 transition-colors",
+              "p-2 rounded md:[writing-mode:vertical-lr] md:rotate-180 transition-colors",
               selectedCategory === 'coding' 
                 ? "bg-cyan-500 text-white" 
                 : "text-gray-300 hover:bg-gray-700"
@@ -39,7 +39,7 @@ export default function ProjectsPage() {
           <button
             onClick={() => setSelectedCategory('hobby')}
             className={cn(
-              "p-2 rounded [writing-mode:vertical-lr] rotate-180 transition-colors",
+              "p-2 rounded md:[writing-mode:vertical-lr] md:rotate-180 transition-colors",
               selectedCategory === 'hobby' 
                 ? "bg-cyan-500 text-white" 
                 : "text-gray-300 hover:bg-gray-700"

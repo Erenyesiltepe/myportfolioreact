@@ -1,15 +1,51 @@
 "use client"
 import Image from 'next/image';
+import { useState } from 'react';
 import cvData from '@/assets/cv_data.json';
 import PageLayout from '@/components/PageLayout';
 
-const AboutPage = () => {
+const Section = ({ 
+  title, 
+  children, 
+  defaultExpanded = true 
+}: { 
+  title: string; 
+  children: React.ReactNode;
+  defaultExpanded?: boolean;
+}) => {
+  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
   return (
+    <section className="mb-12">
+      <button 
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full flex items-center justify-between text-2xl font-bold text-white mb-6 hover:text-cyan-400"
+      >
+        <span>{title}</span>
+        <svg 
+          className={`w-6 h-6 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div className={`space-y-6 transition-all duration-300 ${
+        isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+      }`}>
+        {children}
+      </div>
+    </section>
+  );
+};
+
+const AboutPage = () => {
+  return (
     <PageLayout>
-      <div className="grid grid-cols-[400px_1fr] flex-1 overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] flex-1 overflow-hidden">
         {/* Profile Section */}
-        <div className="p-8 border-r-2 border-gray-700">
+        <div className="p-8 md:border-r-2 md:border-gray-700 border-b-2 border-gray-700 md:border-b-0">
           <div className="flex flex-col items-center">
             <div className="w-48 h-48 rounded-full overflow-hidden mb-6">
               <Image
@@ -70,48 +106,39 @@ const AboutPage = () => {
         </div>
 
         {/* CV Section */}
-        <div className="overflow-y-auto p-8">
+        <div className="overflow-y-auto p-8 h-[calc(100vh-40rem)] md:h-auto">
           {/* Work Experience */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-white mb-6">Work Experience</h2>
-            <div className="space-y-6">
-              {cvData.experience.map((exp, index) => (
-                <div key={index} className="border-l-2 border-cyan-500 pl-4">
-                  <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
-                  <p className="text-gray-400">{exp.companyName} • {exp.dateRange}</p>
-                  <p className="text-gray-300 mt-2">{exp.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <Section title="Work Experience">
+            {cvData.experience.map((exp, index) => (
+              <div key={index} className="border-l-2 border-cyan-500 pl-4">
+                <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
+                <p className="text-gray-400">{exp.companyName} • {exp.dateRange}</p>
+                <p className="text-gray-300 mt-2 whitespace-pre-line">{exp.description}</p>
+              </div>
+            ))}
+          </Section>
 
           {/* Education */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-white mb-6">Education</h2>
-            <div className="space-y-6">
-              {cvData.education.map((edu, index) => (
-                <div key={index} className="border-l-2 border-cyan-500 pl-4">
-                  <h3 className="text-lg font-semibold text-white">{edu.school}</h3>
-                  <p className="text-gray-400">{edu.degree} • {edu.dateRange}</p>
-                  <p className="text-gray-300 mt-2">{edu.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <Section title="Education">
+            {cvData.education.map((edu, index) => (
+              <div key={index} className="border-l-2 border-cyan-500 pl-4">
+                <h3 className="text-lg font-semibold text-white">{edu.school}</h3>
+                <p className="text-gray-400">{edu.degree} • {edu.dateRange}</p>
+                <p className="text-gray-300 mt-2 whitespace-pre-line">{edu.description}</p>
+              </div>
+            ))}
+          </Section>
 
           {/* Social Activities */}
-          <section>
-            <h2 className="text-2xl font-bold text-white mb-6">Social</h2>
-            <div className="space-y-6">
-              {cvData.social.map((social, index) => (
-                <div key={index} className="border-l-2 border-cyan-500 pl-4">
-                  <h3 className="text-lg font-semibold text-white">{social.activity}</h3>
-                  <p className="text-gray-400">{social.organization} • {social.date}</p>
-                  <p className="text-gray-300 mt-2">{social.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <Section title="Social">
+            {cvData.social.map((social, index) => (
+              <div key={index} className="border-l-2 border-cyan-500 pl-4">
+                <h3 className="text-lg font-semibold text-white">{social.activity}</h3>
+                <p className="text-gray-400">{social.organization} • {social.date}</p>
+                <p className="text-gray-300 mt-2 whitespace-pre-line">{social.description}</p>
+              </div>
+            ))}
+          </Section>
         </div>
       </div>
     </PageLayout>
