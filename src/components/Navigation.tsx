@@ -26,7 +26,7 @@ export default function Navigation() {
       >
         Projects
       </Link>
-      {/* <Link 
+      <Link 
         href="/blog" 
         className={cn(
           "p-4 text-white border-r border-gray-600 relative",
@@ -36,14 +36,14 @@ export default function Navigation() {
         Blog
       </Link>
       <Link 
-        href="/chat" 
+        href="/cv-chat" 
         className={cn(
-          "p-4 text-white relative",
-          pathname === "/chat" && "bg-gray-700 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-cyan-500"
+          "p-4 text-white border-r border-gray-600 relative",
+          pathname === "/cv-chat" && "bg-gray-700 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-cyan-500"
         )}
       >
-        Chat
-      </Link> */}
+        CV Chat
+      </Link>
     </nav>
   );
 } 
