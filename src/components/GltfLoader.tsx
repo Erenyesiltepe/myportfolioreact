@@ -18,7 +18,7 @@ export default function GltfLoader({ url }: ModelProps) {
       <Canvas shadows>
         <Suspense fallback={null}>
           {/* Camera */}
-          <PerspectiveCamera makeDefault position={[0.1, 0.1, 0.1]} />
+          <PerspectiveCamera makeDefault position={[5, 5, 5]} />
           
           {/* Lighting */}
           <ambientLight intensity={0.5} />

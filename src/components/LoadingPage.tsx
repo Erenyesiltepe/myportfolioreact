@@ -21,11 +21,11 @@ const LoadingPage = ({ loaded = true }: LoadingPageProps) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center p-8">
       {/* Container for the entire loading design */}
-      <div className="relative w-full h-full overflow-hidden">
+      <div className="relative w-full h-screen overflow-hidden">
         <div className="w-full h-full flex bg-transparent">
           {/* Left half */}
           <div className={cn(
-            "w-1/2 relative transition-transform duration-1000 bg-gray-800",
+            "w-1/2 relative transition-transform duration-1000 bg-gray-800 z-[9999]",
             loaded && "-translate-x-[120%]"
           )}>
             {/* Left horizontal line */}
@@ -71,7 +71,7 @@ const LoadingPage = ({ loaded = true }: LoadingPageProps) => {
             </div>
 
             {/* Center logo (moved to left half) */}
-            <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 z-50">
+            <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
               <div className="w-36 h-36 rounded-full bg-gray-900 border-4 border-gray-700 flex items-center justify-center">
                 <div 
                   className="w-28 h-28 rounded-full bg-gray-800 flex items-center justify-center"

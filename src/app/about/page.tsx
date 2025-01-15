@@ -43,7 +43,7 @@ const Section = ({
 const AboutPage = () => {
   return (
     <PageLayout>
-      <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] flex-1 overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] flex-1 md:overflow-y-hidden overflow-y-scroll">
         {/* Profile Section */}
         <div className="p-8 md:border-r-2 md:border-gray-700 border-b-2 border-gray-700 md:border-b-0">
           <div className="flex flex-col items-center">
@@ -106,7 +106,7 @@ const AboutPage = () => {
         </div>
 
         {/* CV Section */}
-        <div className="overflow-y-auto p-8 h-[calc(100vh-40rem)] md:h-auto">
+        <div className="p-8 h-[calc(100vh-40rem)] md:h-[calc(100vh-10rem)] md:overflow-y-scroll">
           {/* Work Experience */}
           <Section title="Work Experience">
             {cvData.experience.map((exp, index) => (

@@ -59,4 +59,28 @@ export default {
     },
   },
   plugins: [],
+  variants: {
+    scrollbar: ['rounded']
+  },
+  layer: {
+    utilities: {
+      '.scrollbar': {
+        '&::-webkit-scrollbar': {
+          width: '8px',
+        },
+        '&::-webkit-scrollbar-track': {
+          backgroundColor: '#1f2937', // gray-800
+        },
+        '&::-webkit-scrollbar-thumb': {
+          backgroundColor: '#0891b2', // cyan-600
+          borderRadius: '4px',
+        },
+        '&::-webkit-scrollbar-thumb:hover': {
+          backgroundColor: '#06b6d4', // cyan-500
+        },
+        'scrollbar-width': 'thin',
+        'scrollbar-color': '#0891b2 #1f2937',
+      },
+    },
+  },
 } satisfies Config;

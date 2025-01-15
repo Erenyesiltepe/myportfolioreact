@@ -37,7 +37,9 @@ export default function PageLayout({ children }: PageLayoutProps) {
     <div className="min-h-screen bg-gray-900 p-8">
       <div className="max-w-[calc(100vw-4rem)] mx-auto bg-gray-800 rounded-lg border-2 border-gray-700 h-[calc(100vh-4rem)] flex flex-col">
         <Navigation />
-        {children}
+        <main className="overflow-y-auto scrollbar">
+          {children}
+        </main>
         {showLoading && (
           <div className="fixed inset-0 z-50">
             <LoadingPage loaded={loadingState} />

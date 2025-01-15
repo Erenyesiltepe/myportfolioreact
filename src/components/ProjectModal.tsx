@@ -39,8 +39,8 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-8 z-50">
-      <div className="bg-gray-800 w-full max-w-6xl rounded-lg overflow-hidden">
-        <div className="relative grid grid-cols-[1.5fr_1fr] min-h-[600px]">
+      <div className="bg-gray-800 w-full max-w-6xl rounded-lg overflow-y-scroll md:overflow-y-hidden scrollbar">
+        <div className="relative flex flex-col md:grid md:grid-cols-[1.5fr_1fr] h-[80vh] md:min-h-[600px]">
           {/* Close button */}
           <button
             onClick={onClose}
@@ -52,7 +52,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           </button>
 
           {/* Left side - Carousel */}
-          <div className="relative bg-gray-900">
+          <div className="relative bg-gray-900 h-[40vh] md:h-full">
             {/* Navigation arrows */}
             <button
               onClick={prevSlide}
@@ -114,23 +114,28 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           </div>
 
           {/* Right side - Details */}
-          <div className="p-8 flex flex-col">
-            <div className="mb-4">
-              <span className="text-sm text-cyan-400 uppercase">{project.category}</span>
-              <h2 className="text-2xl font-bold text-white mt-1">{project.title}</h2>
-            </div>
+          <div className="flex flex-col h-[40vh] md:h-full">
+            <div className="p-8 flex flex-col h-full">
+              <div className="mb-4 flex-shrink-0">
+                <span className="text-sm text-cyan-400 uppercase">{project.category}</span>
+                <h2 className="text-2xl font-bold text-white mt-1">{project.title}</h2>
+              </div>
 
-            <p className="text-gray-300 flex-grow">{project.about}</p>
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 bg-cyan-500 text-white px-6 py-2 rounded hover:bg-cyan-600 text-center"
-              >
-                Go to details
-              </a>
-            )}
+              <div className="flex-1 md:overflow-y-scroll md:max-h-[calc(100vh-30rem)] scrollbar">
+                <p className="text-gray-300 pr-4">{project.about}</p>
+              </div>
+
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 bg-cyan-500 text-white px-6 py-2 rounded hover:bg-cyan-600 text-center flex-shrink-0"
+                >
+                  Go to details
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
