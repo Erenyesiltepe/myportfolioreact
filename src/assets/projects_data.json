@@ -1,6 +1,18 @@
 {
   "coding": [
     {
+      "id": "NewPortffolio",
+      "title": "React Portfolio",
+      "about": "My new portfolio website featuring three.js, react.js, next.js, RAG, AI and tailwind CSS. The website is created to showcase my skills and CV.",
+      "link": "https://github.com/Erenyesiltepe/myportfolioreact",
+      "assets": [
+        {
+          "type": "image",
+          "url": "/coding/newportfolio.jpg"
+        }
+      ]
+    },
+    {
       "id": "Petiary",
       "title": "Petiary",
       "about": "Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).Petiary was our CTIS221 JAVA term project. We created a program to store the information of pets and help their owners remember important things(like vaccination dates).",
