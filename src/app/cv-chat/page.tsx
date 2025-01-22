@@ -4,13 +4,13 @@ import PageLayout from '@/components/PageLayout';
 import ChatMessage from '@/components/ChatMessage';
 
 interface Message {
-  role: 'user' | 'assistant';
+  role: 'user' | 'model';
   content: string;
 }
 
 export default function CVChatPage() {
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: "Hi! I'm familiar with Eren's CV. Feel free to ask me anything about his experience, education, or skills!" }
+    { role: 'model', content: "Hi! I'm familiar with Eren's CV. Feel free to ask me anything about his experience, education, or skills!" }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -24,14 +24,15 @@ export default function CVChatPage() {
     setLoading(true);
 
     // Add user message to chat
-    setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+    const newMessages = [...messages, { role: 'user' as const, content: userMessage }];
+    setMessages(newMessages);
 
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          messages,
+          messages: newMessages,
           userMessage
         }),
       });
@@ -39,11 +40,11 @@ export default function CVChatPage() {
       if (!response.ok) throw new Error('Failed to fetch response');
       
       const data = await response.json();
-      setMessages(prev => [...prev, { role: 'assistant', content: data.text }]);
+      setMessages(prev => [...prev, { role: 'model', content: data.text }]);
     } catch (error) {
       console.error('Failed to get response:', error);
       setMessages(prev => [...prev, { 
-        role: 'assistant', 
+        role: 'model', 
         content: "I'm sorry, I encountered an error. Please try again." 
       }]);
     } finally {
@@ -90,4 +91,4 @@ export default function CVChatPage() {
       </div>
     </PageLayout>
   );
-} 
+}

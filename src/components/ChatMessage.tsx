@@ -1,6 +1,6 @@
 interface ChatMessageProps {
   message: {
-    role: 'user' | 'assistant';
+    role: 'user' | 'model';
     content: string;
   };
 }
