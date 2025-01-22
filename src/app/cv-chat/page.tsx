@@ -54,10 +54,10 @@ export default function CVChatPage() {
 
   return (
     <PageLayout>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-[calc(100vh-10rem)] md:h-full">
         {/* Chat messages */}
         <div className="flex-1 p-4 overflow-y-auto scrollbar">
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-4 mb-4">
             {messages.map((message, index) => (
               <ChatMessage key={index} message={message} />
             ))}
@@ -69,25 +69,27 @@ export default function CVChatPage() {
           </div>
         </div>
 
-        {/* Input form */}
-        <form onSubmit={sendMessage} className="p-4 border-t border-gray-700">
-          <div className="max-w-3xl mx-auto flex gap-2">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about Eren's experience..."
-              className="flex-1 bg-gray-700 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            />
-            <button
-              type="submit"
-              disabled={loading || !input.trim()}
-              className="bg-cyan-500 text-white px-6 py-2 rounded hover:bg-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Send
-            </button>
-          </div>
-        </form>
+        {/* Input form - fixed at bottom on mobile */}
+        <div className="sticky bottom-0 bg-gray-800 border-t border-gray-700 p-4">
+          <form onSubmit={sendMessage} className="max-w-3xl mx-auto">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Ask about Eren's experience..."
+                className="flex-1 bg-gray-700 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              />
+              <button
+                type="submit"
+                disabled={loading || !input.trim()}
+                className="bg-cyan-500 text-white px-4 md:px-6 py-2 rounded hover:bg-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+              >
+                {loading ? 'Sending...' : 'Send'}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </PageLayout>
   );
